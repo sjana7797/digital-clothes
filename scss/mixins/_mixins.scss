@@ -1,0 +1,88 @@
+@mixin navigation() {
+    &-lists {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+    }
+    &-item {
+        list-style: none;
+    }
+    &-link {
+        text-decoration: none;
+        color: color(primary);
+        font-size: font-size(md);
+        transition: all 0.3s;
+        text-align: center;
+        &:hover {
+            color: color(quarternary);
+        }
+    }
+}
+
+@mixin flexPosition($justifyContent: center, $alignItem: center) {
+    display: flex;
+    align-items: $alignItem;
+    justify-content: $justifyContent;
+}
+
+@mixin footerNav {
+    &-heading {
+        font-size: font-size(l);
+        text-transform: capitalize;
+    }
+    &-item {
+        list-style: none;
+        margin: 1rem 0rem;
+        text-align: center;
+    }
+    &-link {
+        text-decoration: none;
+        font-size: font-size(xs);
+        text-transform: capitalize;
+        color: lighten(color(primary), 15%);
+        transition: color 0.2s;
+        &:hover {
+            color: lighten(color(primary), 35%);
+        }
+    }
+}
+
+@mixin responsive($breakpoint) {
+    @if ($breakpoint==xl) {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @if ($breakpoint==lg) {
+        @media (max-width: 1000px) {
+            @content;
+        }
+    }
+    @if ($breakpoint==md) {
+        @media (max-width: 786px) {
+            @content;
+        }
+    }
+    @if ($breakpoint==md2) {
+        @media (max-width: 680px) {
+            @content;
+        }
+    }
+    @if ($breakpoint==sm) {
+        @media (max-width: 500px) {
+            @content;
+        }
+    }
+    @if ($breakpoint==xs) {
+        @media (max-width: 450px) {
+            @content;
+        }
+    }
+    @if ($breakpoint==xs2) {
+        @media (max-width: 350px) {
+            @content;
+        }
+    }
+}

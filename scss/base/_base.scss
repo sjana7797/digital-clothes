@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // 10/16=62.5%;
+    @include responsive(lg) {
+        font-size: 56.25%;
+    }
+    @include responsive(sm) {
+        font-size: 50%;
+    }
+    @include responsive(xs) {
+        font-size: 37.5%;
+    }
+    @include responsive(xs2) {
+        font-size: 31.25%;
+    }
+    font-family: map-get($fonts, josefins-sans),
+    sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax( 6rem, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    grid-row-gap: 1.6rem;
+    background-color: color(tertiary);
+}

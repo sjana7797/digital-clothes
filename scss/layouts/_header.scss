@@ -1,0 +1,21 @@
+.header {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) repeat( 7, minmax(min-content, 16rem)) minmax(10rem, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    grid-gap: 2rem;
+}
+
+.heading {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    text-align: center;
+    padding: 0.5rem;
+    &-text {
+        font-size: font-size(xl) * 1.5;
+        font-weight: lighter;
+        font-family: map-get($fonts, great-vibes), cursive;
+        letter-spacing: 0.5rem;
+    }
+}

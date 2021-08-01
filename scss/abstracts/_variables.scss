@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:wght@300;400;600&display=swap");
+$fonts: ( great-vibes: "Great Vibes",
+josefins-sans: "Josefins Sans",
+);
+$colors: ( primary: #333,
+secondary: #ffe,
+tertiary: #f2f0f1,
+quarternary: #f5b149,
+);
+@function color($color) {
+    @return map-get($colors,
+    $color);
+}
+
+$font-sizes: ( xl: 3rem,
+l: 2.5rem,
+md: 2rem,
+sm: 1.8rem,
+xs: 1.3rem,
+);
+@function font-size($size) {
+    @return map-get($font-sizes,
+    $size);
+}

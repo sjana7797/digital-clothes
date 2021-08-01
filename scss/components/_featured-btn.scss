@@ -1,0 +1,62 @@
+.btn {
+    width: 16rem;
+    height: 4rem;
+    @include flexPosition(space-around);
+    position: relative;
+    text-decoration: none;
+    &:hover {
+        & .btn-bg {
+            width: 18rem;
+        }
+        & .btn-text {
+            color: color(secondary);
+        }
+        & .arrow {
+            transform: translateX(1rem);
+            .line {
+                &-1 {
+                    width: 2rem;
+                }
+            }
+        }
+    }
+    &-bg {
+        background-color: color(primary);
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        left: 0;
+        border-radius: 5rem;
+        transition: all 0.2s;
+    }
+    &-text {
+        font-size: font-size(xs);
+        text-transform: uppercase;
+        color: color(primary);
+        z-index: 10;
+        transition: all 0.2s;
+    }
+    .arrow {
+        @include flexPosition;
+        transition: all 0.2s;
+        .line {
+            height: 0.2rem;
+            position: absolute;
+            background-color: color(secondary);
+            transform-origin: right;
+            &-1 {
+                width: 0;
+                transform: translateX(-0.7rem);
+                transition: width 0.2s;
+            }
+            &-2 {
+                width: 1rem;
+                transform: rotateZ(45deg);
+            }
+            &-3 {
+                width: 1rem;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+}
